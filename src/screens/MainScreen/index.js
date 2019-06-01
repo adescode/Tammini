@@ -27,6 +27,10 @@ export class MainScreen extends Component {
   static propTypes = {
     prop: PropTypes
   };
+  componentWillMount() {
+    this.props.navigation.navigate('LangFormScreen')
+  }
+  
 
   render() {
     return (
