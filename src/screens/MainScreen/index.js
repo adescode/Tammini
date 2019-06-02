@@ -36,7 +36,7 @@ export class MainScreen extends Component {
       <Container>
         <Header transparent style={{margin:10}}>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={()=>this.props.navigation.toggleDrawer()}>
               <Icon
                 type='MaterialCommunityIcons'
                 name='menu'

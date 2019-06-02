@@ -1,6 +1,6 @@
 import React from 'react';
 import { Easing, Animated } from 'react-native';
-import { createAppContainer, createStackNavigator } from 'react-navigation';
+import { createAppContainer, createStackNavigator, createDrawerNavigator } from 'react-navigation';
 
 import MainScreen from './screens/MainScreen';
 import LangFormScreen from './screens/LangFormScreen';
@@ -14,7 +14,7 @@ import PregScreen from './screens/PregScreen';
 import NewPatientScreen from './screens/NewPatientScreen';
 import PatientTypeScreen from './screens/PatientTypeScreen';
 
-let RootStack = createStackNavigator(
+let RootStack = createDrawerNavigator(
   {
     MainScreen:{
       screen: MainScreen,
