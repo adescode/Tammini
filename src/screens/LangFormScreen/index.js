@@ -31,8 +31,8 @@ export class LangFormScreen extends Component  {
 
   render() {
     return (
-      <Container style={{ flex: 1 }}>
-        <Header transparent />
+      <Container>
+        <Header transparent style={{margin:10}}/>
       <Content contentContainerStyle={{flex: 1 }}>
             <Card transparent style={{ width, position:"absolute", bottom:50, padding:10 }}>
               <CardItem style={{ backgroundColor: 'transparent' }}>

@@ -31,8 +31,8 @@ export class NameFormScreen extends Component {
 
   render() {
     return (
-      <Container style={{ flex: 1, margin: 0, padding: 0 }}>
-        <Header transparent />
+      <Container>
+        <Header transparent style={{margin:10}}/>
         <Content
           contentContainerStyle={{ flex: 1 }}
           keyboardShouldPersistTaps='handled'

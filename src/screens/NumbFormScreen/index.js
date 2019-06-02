@@ -30,8 +30,8 @@ export class NumbFormScreen extends Component {
 
   render() {
     return (
-      <Container style={{ flex: 1, margin: 0, padding: 0 }}>
-        <Header transparent />
+      <Container>
+        <Header transparent style={{margin:10}}/>
         <Content
           contentContainerStyle={{ flex: 1 }}
           keyboardShouldPersistTaps='handled'
@@ -67,19 +67,18 @@ export class NumbFormScreen extends Component {
                   style={{
                     height: 40,
                     justifyContent: 'center',
-                    padding: 20,
                     borderRightColor: '#57575757',
                     borderRightWidth: 1,
                     overflow: 'hidden'
                   }}
                 >
-                  <Text>+1</Text>
+                  <Text style={{padding:10}}>+1</Text>
                 </View>
                   <TextInput
                     onChangeText={text => this.setState({ text })}
                     value={this.state.value}
                     placeholder={'Mobile Number'}
-                    style={{flex:1, fontSize:16}}
+                    style={{flex:1, fontSize:16, padding:5}}
                     keyboardType={'numeric'}
                     maxLength = {20}
                   />

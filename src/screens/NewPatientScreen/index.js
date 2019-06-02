@@ -37,9 +37,9 @@ export class NewPatientScreen extends Component {
   render() {
     return (
       <Container>
-        <Header transparent>
+        <Header transparent style={{margin:10}}>
           <Left>
-            <Button transparent>
+            <Button transparent onPress={() => this.props.navigation.goBack()}>
               <Icon
                 type='MaterialCommunityIcons'
                 name='keyboard-backspace'

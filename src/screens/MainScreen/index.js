@@ -28,7 +28,7 @@ export class MainScreen extends Component {
   }
 
   componentWillMount() {
-    // this.props.navigation.navigate('NewPatientScreen')
+    // this.props.navigation.navigate('LangFormScreen')
   }
 
   render() {
@@ -79,22 +79,12 @@ export class MainScreen extends Component {
                   onChangeText={text => this.setState({ text })}
                   value={this.state.value}
                   placeholder={'Mobile Number'}
-                  style={{ flex: 1, fontSize: 16 }}
+                  style={{ flex: 1, fontSize: 16, padding:10 }}
                   keyboardType={'numeric'}
                   maxLength={20}
                 />
-                <View
-                  style={{
-                    height: 40,
-                    justifyContent: 'center',
-                    padding: 20,
-                    borderRightColor: '#57575757',
-                    borderRightWidth: 1,
-                    overflow: 'hidden'
-                  }}
-                >
-                  <Icon name='search' />
-                </View>
+                  <Icon name='search' style={{padding:10}}/>
+               
               </View>
             </Card>
           </Card>
