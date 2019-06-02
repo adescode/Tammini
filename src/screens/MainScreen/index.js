@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-// import { View, Text } from 'react-native'
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import {
   Container,
@@ -24,9 +22,6 @@ export class MainScreen extends Component {
     this.state = {};
   }
 
-  static propTypes = {
-    prop: PropTypes
-  };
   componentWillMount() {
     this.props.navigation.navigate('LangFormScreen')
   }
@@ -35,27 +30,9 @@ export class MainScreen extends Component {
   render() {
     return (
         <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Main Screen</Title>
-          </Body>
-          <Right />
-        </Header>
         <Content>
           <Text>This is Content Section</Text>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
       </Container>
     );
   }

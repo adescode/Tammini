@@ -5,7 +5,7 @@ import { createAppContainer, createStackNavigator } from 'react-navigation';
 import MainScreen from './screens/MainScreen';
 import LangFormScreen from './screens/LangFormScreen';
 import NumbFormScreen from './screens/NumbFormScreen';
-// import PassFormScreen from './screens/PassFormScreen';
+import PassFormScreen from './screens/PassFormScreen';
 import NameFormScreen from './screens/NameFormScreen';
 import CompleteFormScreen from './screens/CompleteFormScreen';
 
@@ -30,6 +30,12 @@ let RootStack = createStackNavigator(
       }),
     },
     // PassFormScreen,
+    PassFormScreen:{
+      screen: PassFormScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
     NameFormScreen:{
       screen: NameFormScreen,
       navigationOptions: ({ navigation }) => ({

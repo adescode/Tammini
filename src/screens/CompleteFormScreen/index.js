@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-// import { View, Text } from 'react-native'
-import PropTypes from 'prop-types';
+import { View, Text } from 'react-native'
 import { connect } from 'react-redux';
 import {
   Container,
@@ -14,7 +13,8 @@ import {
   Right,
   Body,
   Icon,
-  Text
+  // Text,
+  Card
 } from 'native-base';
 
 export class CompleteFormScreen extends Component {
@@ -24,34 +24,21 @@ export class CompleteFormScreen extends Component {
     this.state = {};
   }
 
-  static propTypes = {
-    prop: PropTypes
-  };
-
   render() {
     return (
-        <Container>
-        <Header>
-          <Left>
-            <Button transparent>
-              <Icon name='menu' />
-            </Button>
-          </Left>
-          <Body>
-            <Title>Header</Title>
-          </Body>
-          <Right />
-        </Header>
-        <Content>
-          <Text>This is Content Section</Text>
+      <Container style={{ flex: 1, margin: 0, padding: 0 }}>
+      <Header transparent />
+      <Content
+        contentContainerStyle={{ flex: 1 }}
+        keyboardShouldPersistTaps='handled'
+      >
+        <Card>
+          <View>
+            <Icon type="AntDesign"  name="checkcircle" style={{fontSize:200}} color={'#FFFFFF'} />
+          </View>
+        </Card>
         </Content>
-        <Footer>
-          <FooterTab>
-            <Button full>
-              <Text>Footer</Text>
-            </Button>
-          </FooterTab>
-        </Footer>
+        
       </Container>
     );
   }
