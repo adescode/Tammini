@@ -34,7 +34,7 @@ export class MainScreen extends Component {
   render() {
     return (
       <Container>
-        <Header transparent>
+        <Header transparent style={{margin:10}}>
           <Left>
             <Button transparent>
               <Icon
