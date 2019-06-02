@@ -22,7 +22,7 @@ import Layout from '../../constants/Layout';
 
 const { width, height } = Layout.window;
 
-export class LangFormScreen extends Component  {
+export class GenderScreen extends Component  {
   constructor(props) {
     super(props);
 
@@ -32,7 +32,15 @@ export class LangFormScreen extends Component  {
   render() {
     return (
       <Container style={{ flex: 1 }}>
-        <Header transparent />
+        <Header transparent>
+          <Left>
+            <Button transparent>
+              <Icon type='MaterialCommunityIcons' name='keyboard-backspace' style={{ color: '#509CE2', fontWeight: 'bold', fontSize:30}} />
+            </Button>
+          </Left>
+          <Body/>
+          <Right/>
+        </Header>
       <Content contentContainerStyle={{flex: 1 }}>
             <Card transparent style={{ width, position:"absolute", bottom:50, padding:10 }}>
               <CardItem style={{ backgroundColor: 'transparent' }}>
@@ -44,17 +52,17 @@ export class LangFormScreen extends Component  {
               </CardItem>
               <CardItem style={{ backgroundColor: 'transparent' }}>
                 <Left>
-                  <Text style={{fontWeight:"900", fontSize:20}}>App Language?</Text>
+                  <Text style={{fontWeight:"900", fontSize:20}}>What is your Gender?</Text>
                 </Left>
               </CardItem>
               <Card transparent padder>
                 <Button block bordered style={{margin:10, borderRadius: 5}}
-                onPress={() => this.props.navigation.navigate('NameFormScreen')}
+                onPress={() => this.props.navigation.navigate('MainScreen')}
                 >
-                <Text>English</Text>
+                <Text>Male</Text>
               </Button>
-              <Button block bordered style={{margin:10, borderRadius: 5}}>
-                <Text>Arabic</Text>
+              <Button block bordered style={{margin:10, borderRadius: 5, borderColor: "#57575757"}}>
+                <Text>Female</Text>
               </Button>
               </Card>
               
@@ -72,4 +80,4 @@ const mapDispatchToProps = {};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LangFormScreen);
+)(GenderScreen);

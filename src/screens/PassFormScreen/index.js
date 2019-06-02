@@ -95,20 +95,30 @@ export class PassFormScreen extends Component {
                   onFulfill={this.handlerOnFulfill}
                 />
               </CardItem>
-              <View style={{flex:1, alignItems: "center", width, alignSelf:"center"}}>
-                <Button transparent style={{alignSelf:"center"}}>
-                  <Text style={{textAlign: 'center', color:'#509CE2'}}>
+              <View
+                style={{
+                  flex: 1,
+                  alignItems: 'center',
+                  width,
+                  alignSelf: 'center'
+                }}
+              >
+                <Button transparent style={{ alignSelf: 'center' }}>
+                  <Text style={{ textAlign: 'center', color: '#509CE2' }}>
                     Resend Code
                   </Text>
                 </Button>
-                  
               </View>
             </Card>
           </Card>
           <View
             style={{ width, position: 'absolute', bottom: 20, padding: 10 }}
           >
-            <Button block style={{ margin: 10, borderRadius: 5 }}>
+            <Button
+              block
+              style={{ margin: 10, borderRadius: 5 }}
+              onPress={() => this.props.navigation.navigate('CompleteFormScreen')}
+            >
               <Text
                 style={{
                   margin: 10,

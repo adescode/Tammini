@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native';
+import { Text, View, TextInput } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Container,
@@ -15,10 +15,7 @@ import {
   Icon,
   Card,
   CardItem,
-  Thumbnail,
-  H2,
-  Input,
-  Item
+  Thumbnail
 } from 'native-base';
 import Layout from '../../constants/Layout';
 
@@ -28,7 +25,7 @@ export class NumbFormScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { text: '' };
   }
 
   render() {
@@ -53,10 +50,40 @@ export class NumbFormScreen extends Component {
                 What's your number?
               </Text>
             </View>
-            <Card transparent style={{ padding: 7 }}>
-              <Item regular style={{ borderRadius: 5 }}>
-                <Input placeholder='Mobile Number' keyboardType={'numeric'} />
-              </Item>
+            <Card transparent>
+              <View
+                style={{
+                  // flex:1,
+                  flexDirection: 'row',
+                  alignItems: 'center',
+                  margin: 10,
+                  height: 50,
+                  borderRadius: 5,
+                  borderColor: '#57575757',
+                  borderWidth: 1
+                }}
+              >
+                <View
+                  style={{
+                    height: 40,
+                    justifyContent: 'center',
+                    padding: 20,
+                    borderRightColor: '#57575757',
+                    borderRightWidth: 1,
+                    overflow: 'hidden'
+                  }}
+                >
+                  <Text>+1</Text>
+                </View>
+                  <TextInput
+                    onChangeText={text => this.setState({ text })}
+                    value={this.state.value}
+                    placeholder={'Mobile Number'}
+                    style={{flex:1, fontSize:16}}
+                    keyboardType={'numeric'}
+                    maxLength = {20}
+                  />
+              </View>
               <CardItem style={{ paddingHorizontal: 20, marginVertical: 50 }}>
                 <Body>
                   <Text style={{ textAlign: 'center' }}>

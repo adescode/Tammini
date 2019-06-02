@@ -22,7 +22,7 @@ import Layout from '../../constants/Layout';
 
 const { width, height } = Layout.window;
 
-export class LangFormScreen extends Component  {
+export class PregScreen extends Component  {
   constructor(props) {
     super(props);
 
@@ -44,17 +44,17 @@ export class LangFormScreen extends Component  {
               </CardItem>
               <CardItem style={{ backgroundColor: 'transparent' }}>
                 <Left>
-                  <Text style={{fontWeight:"900", fontSize:20}}>App Language?</Text>
+                  <Text style={{fontWeight:"900", fontSize:20}}>Are you pregnant?</Text>
                 </Left>
               </CardItem>
               <Card transparent padder>
                 <Button block bordered style={{margin:10, borderRadius: 5}}
-                onPress={() => this.props.navigation.navigate('NameFormScreen')}
+                onPress={() => this.props.navigation.navigate('NumbFormScreen')}
                 >
-                <Text>English</Text>
+                <Text>My Self</Text>
               </Button>
-              <Button block bordered style={{margin:10, borderRadius: 5}}>
-                <Text>Arabic</Text>
+              <Button block bordered style={{margin:10, borderRadius: 5, borderColor: "#57575757"}}>
+                <Text>Someone else</Text>
               </Button>
               </Card>
               
@@ -72,4 +72,4 @@ const mapDispatchToProps = {};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(LangFormScreen);
+)(PregScreen);

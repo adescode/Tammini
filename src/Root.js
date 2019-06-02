@@ -8,6 +8,11 @@ import NumbFormScreen from './screens/NumbFormScreen';
 import PassFormScreen from './screens/PassFormScreen';
 import NameFormScreen from './screens/NameFormScreen';
 import CompleteFormScreen from './screens/CompleteFormScreen';
+import DobScreen from './screens/DobScreen';
+import GenderScreen from './screens/GenderScreen';
+import PregScreen from './screens/PregScreen';
+import NewPatientScreen from './screens/NewPatientScreen';
+import PatientTypeScreen from './screens/PatientTypeScreen';
 
 let RootStack = createStackNavigator(
   {
@@ -29,7 +34,6 @@ let RootStack = createStackNavigator(
         header: null
       }),
     },
-    // PassFormScreen,
     PassFormScreen:{
       screen: PassFormScreen,
       navigationOptions: ({ navigation }) => ({
@@ -44,6 +48,36 @@ let RootStack = createStackNavigator(
     },
     CompleteFormScreen:{
       screen: CompleteFormScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
+    GenderScreen:{
+      screen: GenderScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
+    DobScreen:{
+      screen: DobScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
+    PregScreen:{
+      screen: PregScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
+    NewPatientScreen:{
+      screen: NewPatientScreen,
+      navigationOptions: ({ navigation }) => ({
+        header: null
+      }),
+    },
+    PatientTypeScreen:{
+      screen: PatientTypeScreen,
       navigationOptions: ({ navigation }) => ({
         header: null
       }),

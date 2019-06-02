@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
-import { View, Text, TextInput } from 'react-native';
+import { Text, View, TouchableHighlight } from 'react-native';
 import { connect } from 'react-redux';
 import {
   Container,
   Header,
   Title,
-  Thumbnail,
   Content,
   Footer,
   FooterTab,
@@ -14,21 +13,25 @@ import {
   Right,
   Body,
   Icon,
-  Card
+  Card,
+  CardItem,
+  Thumbnail,
+  List,
+  ListItem
 } from 'native-base';
 import Layout from '../../constants/Layout';
 
 const { width, height } = Layout.window;
 
-export class MainScreen extends Component {
+export class NewPatientScreen extends Component {
   constructor(props) {
     super(props);
 
-    this.state = {};
+    this.state = { text: '' };
   }
 
-  componentWillMount() {
-    // this.props.navigation.navigate('NewPatientScreen')
+  OpenPatient =()=>{
+   this.props.navigation.navigate('NumbFormScreen')  
   }
 
   render() {
@@ -39,7 +42,7 @@ export class MainScreen extends Component {
             <Button transparent>
               <Icon
                 type='MaterialCommunityIcons'
-                name='menu'
+                name='keyboard-backspace'
                 style={{ color: '#509CE2', fontWeight: 'bold', fontSize: 30 }}
               />
             </Button>
@@ -52,51 +55,34 @@ export class MainScreen extends Component {
           keyboardShouldPersistTaps='handled'
         >
           <Card transparent style={{ width, padding: 10 }}>
-            <View style={{ width, paddingHorizontal: 10, marginVertical: 5 }}>
-              <Thumbnail source={require('../../assets/images/circle.png')} />
-            </View>
-            <View style={{ width, paddingHorizontal: 10, marginVertical: 5 }}>
+            <View style={{ width, paddingHorizontal: 10 }}>
               <Text
-                style={{ fontWeight: 'bold', fontSize: 20, marginVertical: 5 }}
+                style={{ fontWeight: 'bold', fontSize: 30, marginVertical: 5 }}
               >
-                New Complain.
+                Select Patient
               </Text>
             </View>
-            <Card transparent>
+          </Card>
+          <Card transparent style={{ width, padding: 20 }}>
+            <TouchableHighlight onPress={()=>this.OpenPatient()}>
               <View
                 style={{
-                  // flex:1,
                   flexDirection: 'row',
-                  alignItems: 'center',
-                  margin: 10,
-                  height: 50,
-                  borderRadius: 5,
-                  borderColor: '#57575757',
-                  borderWidth: 1
+                  alignContent: 'center',
+                  backgroundColor: '#f1f1f1',
+                  padding: 15,
+                  borderRadius: 5
                 }}
               >
-                <TextInput
-                  onChangeText={text => this.setState({ text })}
-                  value={this.state.value}
-                  placeholder={'Mobile Number'}
-                  style={{ flex: 1, fontSize: 16 }}
-                  keyboardType={'numeric'}
-                  maxLength={20}
+                <Thumbnail
+                  small
+                  source={require('../../assets/images/circle.png')}
                 />
-                <View
-                  style={{
-                    height: 40,
-                    justifyContent: 'center',
-                    padding: 20,
-                    borderRightColor: '#57575757',
-                    borderRightWidth: 1,
-                    overflow: 'hidden'
-                  }}
-                >
-                  <Icon name='search' />
+                <View style={{ padding: 5, paddingHorizontal: 20 }}>
+                  <Text style={{ fontSize: 20 }}>Kumar Pratik</Text>
                 </View>
               </View>
-            </Card>
+            </TouchableHighlight>
           </Card>
           <View
             style={{ width, position: 'absolute', bottom: 20, padding: 10 }}
@@ -104,7 +90,7 @@ export class MainScreen extends Component {
             <Button
               block
               style={{ margin: 10, borderRadius: 5 }}
-              onPress={() => this.props.navigation.navigate('PassFormScreen')}
+              onPress={() => this.props.navigation.navigate('NumbFormScreen')}
             >
               <Text
                 style={{
@@ -114,7 +100,7 @@ export class MainScreen extends Component {
                   color: '#FFFFFF'
                 }}
               >
-                Start
+                Add New Patient
               </Text>
             </Button>
           </View>
@@ -131,4 +117,4 @@ const mapDispatchToProps = {};
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(MainScreen);
+)(NewPatientScreen);
